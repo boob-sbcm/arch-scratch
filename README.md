@@ -12,7 +12,10 @@ Arch Linux image built "from scratch" using shim and ducktape (https://github.co
 
 **Notes**
 
-tar -cvpjf /root.tar.bz2 --exclude=/root.tar.bz2 --one-file-system /
+Create tarball of Arch Linux system from existing Arch Linux host/container
+```
+mkdir -p /ext && tar -cvpjf /ext/root.tar.bz2 --exclude=/ext --exclude=/etc/hosts --exclude=/etc/hostname --exclude=/etc/resolv.conf --exclude=/sys --one-file-system /
+```
 ___
 If you appreciate my work, then please consider buying me a beer  :D
 
