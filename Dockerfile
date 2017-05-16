@@ -5,9 +5,9 @@ MAINTAINER binhex
 ##################
 
 # add bootstrap files
-ADD bootstrap/shim/shim /.shim
-ADD bootstrap/cert/cert /.cert
-ADD bootstrap/ducktape/ducktape /.ducktape
+ADD build/shim/shim /.shim
+ADD build/cert/cert /.cert
+ADD build/ducktape/ducktape /.ducktape
 
 # install app
 #############
