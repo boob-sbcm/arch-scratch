@@ -16,7 +16,7 @@ ADD build/ducktape/ducktape /.ducktape
 RUN ["/.shim", ""]
 
 # run ducktape to download and extract root tarball
-RUN ["/.ducktape", "https://github.com/binhex/arch-scratch/releases/download/0.0.2/archlinux-root-2017-07-04.tar.bz2"]
+RUN ["/.ducktape", "https://github.com/binhex/arch-scratch/releases/download/2017102500/archlinux-root-2017-10-25.tar.bz2"]
 
 # remove bootstrap files
 RUN /usr/bin/rm -f /.shim /.cert /.ducktape /.dockerenv /.dockerinit
