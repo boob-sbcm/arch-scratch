@@ -5,21 +5,25 @@ MAINTAINER binhex
 ##################
 
 # add bootstrap files
-ADD build/shim/shim /.shim
-ADD build/cert/cert /.cert
-ADD build/ducktape/ducktape /.ducktape
+ADD build/busybox/busybox /.busybox
 
 # install app
 #############
 
-# run shim to set execute permissions for ducktape
-RUN ["/.shim", ""]
+# create bootstrap temp folder
+/.busybox mkdir -p /.bootstrap
 
-# run ducktape to download and extract root tarball
-RUN ["/.ducktape", "https://github.com/binhex/arch-scratch/releases/download/2017102500/archlinux-root-2017-10-25.tar.bz2"]
+# change dir
+/.busybox cd /.bootstrap
+
+# download root tarball
+/.busybox wget -O ./archlinux.tar.bz2 "https://github.com/binhex/arch-scratch/releases/download/2017102500/archlinux-root-2017-10-25.tar.bz2"
+
+# untar tarball
+/.busybox tar -xvjf ./archlinux.tar.bz2 -C /
 
 # remove bootstrap files
-RUN /usr/bin/rm -f /.shim /.cert /.ducktape /.dockerenv /.dockerinit
+RUN /usr/bin/rm -rf /.busybox /.dockerenv /.dockerinit /.bootstrap
 
 # set entry point as /bin/bash
 CMD ["/bin/bash"]
