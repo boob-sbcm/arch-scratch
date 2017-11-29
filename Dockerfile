@@ -17,7 +17,7 @@ RUN ["/bootstrap/busybox", "--install", "-s", "/bootstrap"]
 RUN ["/bootstrap/busybox", "sh", "-c", "/bootstrap/wget -O /bootstrap/archlinux.tar.bz2 \
     https://github.com/binhex/arch-scratch/releases/download/2017102500/archlinux-root-2017-10-25.tar.bz2; \
     /bootstrap/tar -xvjf /bootstrap/archlinux.tar.bz2 -C /; \
-    /bootstrap/rm -rf /bootstrap /.dockerenv /.dockerinit"]
+    /bootstrap/rm -rf /bootstrap /.dockerenv /.dockerinit /usr/share/info/*"]
 
 # set entry point as /bin/bash
 CMD ["/bin/bash"]
