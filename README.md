@@ -8,14 +8,7 @@ Arch Linux is an independently developed, i686/x86-64 general purpose GNU/Linux 
 
 **Build notes**
 
-Arch Linux image built "from scratch" using shim and ducktape (https://github.com/dock0/ducktape) to bootstrap. This image has been stripped down to reduce size and is ready to be used to build upon as a base, see binhex/arch-base for example.
-
-**Notes**
-
-Create tarball of Arch Linux system from existing Arch Linux host/container
-```
-mkdir -p /ext && tar -cvpjf /ext/root.tar.bz2 --exclude=/ext --exclude=/etc/hosts --exclude=/etc/hostname --exclude=/etc/resolv.conf --exclude=/sys --one-file-system /
-```
+Arch Linux image built "from scratch" using statically linked busybox to bootstrap. This image uses the Arch Linux bootstrap tarball, it is then further stripped down to reduce size and is ready to be used to build upon as a base, see binhex/arch-base for example.
 ___
 If you appreciate my work, then please consider buying me a beer  :D
 
